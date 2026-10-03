@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/leads}
+    username: ${DATABASE_USER:postgres}
+    password: ${DATABASE_PASSWORD:postgres}
+  flyway:
+    enabled: true
+
+app:
+  worker:
+    enabled: true
+    delay-ms: 1000
+    batch-size: 20
+    max-attempts: 5
